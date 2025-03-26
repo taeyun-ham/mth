@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ready, Set, Go! - Interactive Kids Reader</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.7;
+      padding: 20px;
+      background-color: #fefefe;
+    }
+    .vocab {
+      color: #0077cc;
+      font-weight: bold;
+      cursor: pointer;
+      border-bottom: 1px dashed #0077cc;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 250px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+  <h2>Chapter 7: Ready, Set, Go!</h2>
+  <p>
+    "<span class="vocab" data-meaning="뛰다 🏃‍♂️">Run</span>, Annie! Run!"<br>
+    They <span class="vocab" data-meaning="달리다 💨">dashed</span> down the <span class="vocab" data-meaning="언덕 ⛰️">hill</span>, through the <span class="vocab" data-meaning="풀 🌾">grass</span>, past the <span class="vocab" data-meaning="공룡 🦕">Pteranodon</span>, and right to the rope <span class="vocab" data-meaning="사다리 🪜">ladder</span>.<br>
+    They <span class="vocab" data-meaning="기어오르다 🧗">scrambled</span> up.<br>
+    Annie <span class="vocab" data-meaning="점프하다 🤸‍♀️">leaped</span> to the <span class="vocab" data-meaning="창문 🪟">window</span>.<br>
+    The <span class="vocab" data-meaning="티라노사우르스 🦖">Tyrannosaurus</span> was wandering off.<br>
+    The <span class="vocab" data-meaning="괴물 👹">monster</span> stopped and turned.<br>
+    "<span class="vocab" data-meaning="숙이다 🙇">Duck</span>!" said Jack.<br>
+    They <span class="vocab" data-meaning="숙이다 🙇">hunched</span> down.<br>
+    "<span class="vocab" data-meaning="깨끗한 ☀️">Clear</span> coast," said Jack.<br>
+    "I <span class="vocab" data-meaning="바라다 🙏">wish</span> we could go back to Frog Creek," said Jack.<br>
+    "I left the <span class="vocab" data-meaning="책 📖">book</span> and my <span class="vocab" data-meaning="가방 🎒">pack</span> on the hill."
+    "Hurry!" said Annie.<br>
+    Jack <span class="vocab" data-meaning="내려가다 👇">hurried</span> down.<br>
+    He <span class="vocab" data-meaning="뛰어내리다 🪂">leaped</span> to the <span class="vocab" data-meaning="땅 🏞️">ground</span>.<br>
+    He <span class="vocab" data-meaning="질주하다 🏃">raced</span> past the ferns and up the hill.<br>
+    His pack was <span class="vocab" data-meaning="놓여있는 🧺">lying</span> there.<br>
+    The valley was <span class="vocab" data-meaning="가득찬 🔄">filled</span> with <span class="vocab" data-meaning="공룡들 🦕">Anatosauruses</span>.<br>
+    Ready! Set! Go!<br>
+    Jack <span class="vocab" data-meaning="달리다 🏃‍♂️">charged</span> down the hill.<br>
+    He <span class="vocab" data-meaning="집다 🤲">scooped</span> up his backpack and <span class="vocab" data-meaning="잡다 ✋">grabbed</span> the book.<br>
+    All the dinosaurs were <span class="vocab" data-meaning="소리 지르다 📣">bellowing</span>.<br>
+    Jack <span class="vocab" data-meaning="도망치다 🏃‍♂️">took off</span>.<br>
+    But the Tyrannosaurus rex was back! And he was <span class="vocab" data-meaning="서 있는 🙋">standing</span> between Jack and the tree house!
+  </p>
+
+  <div class="tooltip" id="tooltip"></div>
+
+  <script>
+    const vocabElements = document.querySelectorAll('.vocab');
+    const tooltip = document.getElementById('tooltip');
+
+    vocabElements.forEach(word => {
+      word.addEventListener('click', (e) => {
+        const meaning = e.target.getAttribute('data-meaning');
+        tooltip.textContent = meaning;
+        tooltip.style.display = 'block';
+        tooltip.style.left = e.pageX + 'px';
+        tooltip.style.top = (e.pageY + 20) + 'px';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('vocab')) {
+        tooltip.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
