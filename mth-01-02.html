@@ -1,103 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chapter Two - Word Tooltips</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter Two: The Monster</title>
   <style>
     body {
-      font-family: sans-serif;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
       padding: 20px;
+      background: #fefefe;
     }
-    .word {
-      position: relative;
+    .vocab {
+      color: #0077cc;
+      font-weight: bold;
       cursor: pointer;
-      color: darkblue;
+      border-bottom: 1px dashed #0077cc;
     }
     .tooltip {
-      visibility: hidden;
-      background-color: #eee;
-      color: #000;
-      text-align: center;
-      border-radius: 5px;
-      padding: 5px;
+      display: none;
       position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-size: 0.9em;
-      width: max-content;
-      max-width: 200px;
-    }
-    .word:hover .tooltip {
-      visibility: visible;
-      opacity: 1;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 250px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 100;
     }
   </style>
 </head>
 <body>
-<h2>Chapter Two: The Monster</h2>
-<p>
-  Jack <span class="word">crawled<span class="tooltip">기어갔다</span></span> into the tree house.<br>
-  "Wow," he said. The tree house was filled with <span class="word">books<span class="tooltip">책들</span></span>.<br>
-  Books were <span class="word">everywhere<span class="tooltip">온 사방에</span></span> - very old books with <span class="word">dusty<span class="tooltip">먼지 낀</span></span> covers and new books with <span class="word">shiny<span class="tooltip">반짝이는</span></span>, <span class="word">bright<span class="tooltip">밝은</span></span> covers.<br><br>
+  <h2>Chapter Two: The Monster</h2>
+  <p>
+    Jack <span class="vocab" data-meaning="기어갔다 🐛">crawled</span> into the <span class="vocab" data-meaning="나무집 🛖">tree house</span>.<br>
+    “<span class="vocab" data-meaning="우와 😲">Wow</span>,” he said. The tree house was <span class="vocab" data-meaning="가득 찬 📚">filled</span> with <span class="vocab" data-meaning="책들 📘">books</span>.<br>
+    Books were <span class="vocab" data-meaning="모든 곳에 있는 🌍">everywhere</span>—very <span class="vocab" data-meaning="오래된 ⏳">old</span> books with <span class="vocab" data-meaning="먼지 낀 😶‍🌫️">dusty</span> covers and <span class="vocab" data-meaning="반짝이는 ✨">shiny</span>, <span class="vocab" data-meaning="밝은 🌟">bright</span> covers.<br>
+    “<span class="vocab" data-meaning="봐봐 👀">Look</span>,” said Annie. “You can see <span class="vocab" data-meaning="멀리 👁️">far away</span>.”<br>
+    She was <span class="vocab" data-meaning="유심히 보다 🔍">peering</span> out the tree house <span class="vocab" data-meaning="창문 🪟">window</span>.<br>
+    Jack <span class="vocab" data-meaning="보다 👀">looked</span> out the window with her.<br>
+    Below were the tops of the other <span class="vocab" data-meaning="나무들 🌳">trees</span>.<br>
+    In the distance he could see the Frog Creek <span class="vocab" data-meaning="도서관 📚">library</span> and the <span class="vocab" data-meaning="초등학교 🏫">elementary school</span> and the <span class="vocab" data-meaning="공원 🌳">park</span>.<br>
+    Annie <span class="vocab" data-meaning="가리켰다 ☝️">pointed</span> in the other direction.<br>
+    “There’s our <span class="vocab" data-meaning="집 🏠">house</span>,” she said.<br>
+    Jack could see their <span class="vocab" data-meaning="하얀색 흰색 🤍">white</span> <span class="vocab" data-meaning="나무로 된 🪵">wooden</span> house with its <span class="vocab" data-meaning="초록색 🟩">green</span> <span class="vocab" data-meaning="현관 🚪">porch</span>.<br>
+    In the <span class="vocab" data-meaning="마당 🏡">yard</span> was their neighbor’s <span class="vocab" data-meaning="검은 🐕">black dog</span>, Henry. He looked very <span class="vocab" data-meaning="작은 🐜">tiny</span>.<br>
+    “<span class="vocab" data-meaning="조용히 해 🤫">Shush</span>! We’re not supposed to be up here,” said Jack.<br>
+    Jack <span class="vocab" data-meaning="둘러봤다 👀">glanced</span> around the tree house again.<br>
+    He noticed <span class="vocab" data-meaning="책갈피들 📎">bookmarks</span> were sticking out of many of the books.<br>
+    Annie picked up a book with a <span class="vocab" data-meaning="성 🏰">castle</span> on the <span class="vocab" data-meaning="표지 🧾">cover</span>.<br>
+    Jack <span class="vocab" data-meaning="펼쳤다 📖">turned</span> to the page with the <span class="vocab" data-meaning="책갈피 📎">bookmark</span>.<br>
+    “Here’s a <span class="vocab" data-meaning="그림 🖼️">picture</span> of Frog Creek,” said Jack.<br>
+    Annie held up a book about <span class="vocab" data-meaning="공룡 🦕">dinosaurs</span>.<br>
+    Jack <span class="vocab" data-meaning="잡았다 ✋">grabbed</span> the book.<br>
+    He <span class="vocab" data-meaning="열었다 📖">opened</span> the book and <span class="vocab" data-meaning="봤다 👀">looked</span> at a picture of an <span class="vocab" data-meaning="옛날의 🕰️">ancient</span> flying <span class="vocab" data-meaning="파충류 🐊">reptile</span>.<br>
+    He recognized it as a <span class="vocab" data-meaning="프테라노돈 🦖">Pteranodon</span>.<br>
+    He <span class="vocab" data-meaning="만졌다 ✋">touched</span> the huge <span class="vocab" data-meaning="박쥐 같은 🦇">bat-like</span> <span class="vocab" data-meaning="날개 🪽">wings</span>.<br>
+    Jack <span class="vocab" data-meaning="공부했다 🔍">studied</span> the picture.<br>
+    Suddenly Annie <span class="vocab" data-meaning="비명을 질렀다 😱">screamed</span>: “A <span class="vocab" data-meaning="괴물 👹">monster</span>!”<br>
+    Jack looked out the window.<br>
+    A <span class="vocab" data-meaning="거대한 🦖">giant</span> creature was <span class="vocab" data-meaning="활공하다 🪂">gliding</span> above the treetops.<br>
+    It had a <span class="vocab" data-meaning="길고 이상한 👽">long, weird</span> <span class="vocab" data-meaning="볏 🦖">crest</span>, a <span class="vocab" data-meaning="가느다란 얇은 🪶">skinny</span> <span class="vocab" data-meaning="부리 🐦">beak</span>, and <span class="vocab" data-meaning="커다란 🦇">huge</span> bat-like wings.<br>
+    It was a real live <span class="vocab" data-meaning="프테라노돈 🦖">Pteranodon</span>!<br>
+    The creature <span class="vocab" data-meaning="날아내렸다 ⬇️">swooped</span> through the <span class="vocab" data-meaning="하늘 ☁️">sky</span>.<br>
+    It looked like a <span class="vocab" data-meaning="활공기 ✈️">glider plane</span>.<br>
+    “<span class="vocab" data-meaning="엎드려! 🙇‍♀️">Get down</span>!” cried Annie.<br>
+    Jack and Annie <span class="vocab" data-meaning="몸을 낮췄다 🙇‍♂️">crouched</span> on the <span class="vocab" data-meaning="바닥 🪵">floor</span>.<br>
+    The <span class="vocab" data-meaning="바람 🌬️">wind</span> started to <span class="vocab" data-meaning="불다 🌪️">blow</span>.<br>
+    The tree house started to <span class="vocab" data-meaning="빙글빙글 돌다 🔄">spin</span>.<br>
+    It <span class="vocab" data-meaning="더 빨리 돌다 🌀">spun faster</span> and faster.<br>
+    Then everything was <span class="vocab" data-meaning="조용했다 🤫">still</span>.<br>
+    <span class="vocab" data-meaning="완전히 조용했다 🧘‍♂️">Absolutely still</span>.
+  </p>
 
-  "Look," said Annie. "You can see far away."<br>
-  She was <span class="word">peering<span class="tooltip">유심히 들여다봤다</span></span> out the tree house <span class="word">window<span class="tooltip">창문</span></span>.<br>
-  Jack looked out the window with her.<br>
-  Below were the tops of the other <span class="word">trees<span class="tooltip">나무들</span></span>.<br>
-  In the <span class="word">distance<span class="tooltip">멀리</span></span> he could see the Frog Creek <span class="word">library<span class="tooltip">도서관</span></span>, the elementary <span class="word">school<span class="tooltip">학교</span></span>, and the <span class="word">park<span class="tooltip">공원</span></span>.<br><br>
+  <div class="tooltip" id="tooltip"></div>
 
-  Annie pointed in the other <span class="word">direction<span class="tooltip">방향</span></span>.<br>
-  "There's our <span class="word">house<span class="tooltip">집</span></span>," she said.<br>
-  Jack could see their white wooden house with its green <span class="word">porch<span class="tooltip">현관</span></span>.<br>
-  In the <span class="word">yard<span class="tooltip">마당</span></span> next was their neighbor's black <span class="word">dog<span class="tooltip">개</span></span>, Henry. He looked very <span class="word">tiny<span class="tooltip">작은</span></span>.<br><br>
+  <script>
+    const vocabItems = document.querySelectorAll('.vocab');
+    const tooltip = document.getElementById('tooltip');
 
-  "Hi, Henry!" shouted Annie.<br>
-  "Shush! We're not supposed to be up here," said Jack.<br>
-  Jack <span class="word">glanced<span class="tooltip">훑어보다</span></span> around the tree house again.<br>
-  He noticed that <span class="word">bookmarks<span class="tooltip">책갈피들</span></span> were sticking out of many of the books.<br>
-  "I wonder who <span class="word">owns<span class="tooltip">가지고 있는</span></span> all these books," he said.<br><br>
+    vocabItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        tooltip.textContent = e.target.getAttribute('data-meaning');
+        tooltip.style.display = 'block';
+        tooltip.style.left = e.pageX + 'px';
+        tooltip.style.top = (e.pageY + 20) + 'px';
+      });
+    });
 
-  "I like this one," said Annie. She picked up a book with a <span class="word">castle<span class="tooltip">성</span></span> on the cover.<br>
-  "Here's a book about <span class="word">Pennsylvania<span class="tooltip">펜실베니아 (미국 주)</span></span>," said Jack.<br>
-  He turned to the page with the bookmark.<br>
-  "Hey, here's a picture of Frog Creek," said Jack. "It's a picture of these woods!"<br><br>
-
-  "Oh, here's a book for you," said Annie.<br>
-  She held up a book about <span class="word">dinosaurs<span class="tooltip">공룡들</span></span>.<br>
-  A blue silk bookmark was sticking out of it.<br>
-  "Let me see," said Jack.<br>
-  He set his <span class="word">backpack<span class="tooltip">가방</span></span> down on the floor and <span class="word">grabbed<span class="tooltip">잡았다</span></span> the book from Annie.<br><br>
-
-  Jack opened the dinosaur book to the place where the bookmark was.<br>
-  He turned to a picture of an ancient flying <span class="word">reptile<span class="tooltip">파충류</span></span>.<br>
-  He recognized it as a <span class="word">Pteranodon<span class="tooltip">프테라노돈 (익룡)</span></span>.<br>
-  He touched the huge <span class="word">bat-like<span class="tooltip">박쥐처럼 생긴</span></span> <span class="word">wings<span class="tooltip">날개</span></span> in the picture.<br>
-  "Wow," whispered Jack. "I wish we could go to the time of Pteranodons."<br><br>
-
-  Jack studied the picture of the <span class="word">odd-looking<span class="tooltip">이상하게 생긴</span></span> creature <span class="word">soaring<span class="tooltip">날아오르는</span></span> through the <span class="word">sky<span class="tooltip">하늘</span></span>.<br>
-  "Ahhh!" screamed Annie.<br>
-  "What!" said Jack.<br>
-  "A <span class="word">monster<span class="tooltip">괴물</span></span>!" Annie cried. She pointed out the window.<br>
-  Jack looked out the window.<br>
-  A <span class="word">giant<span class="tooltip">거대한</span></span> creature was <span class="word">gliding<span class="tooltip">미끄러지듯 날다</span></span> above the <span class="word">treetops<span class="tooltip">나무 꼭대기</span></span>!<br>
-  It had a long, <span class="word">weird<span class="tooltip">이상한</span></span> <span class="word">crest<span class="tooltip">볏</span></span> on the back of its head, a skinny <span class="word">beak<span class="tooltip">부리</span></span>, and huge bat-like wings!<br>
-  It was a real live Pteranodon!<br>
-  The creature <span class="word">swooped<span class="tooltip">휙 날아왔다</span></span> through the sky.<br>
-  It looked like a <span class="word">glider<span class="tooltip">활공기</span></span> <span class="word">plane<span class="tooltip">비행기</span></span>!<br>
-  It was coming straight toward the tree house!<br>
-  "Get down!" cried Annie.<br>
-  Jack and Annie <span class="word">crouched<span class="tooltip">쭈그려 앉았다</span></span> on the floor.<br>
-  The <span class="word">wind<span class="tooltip">바람</span></span> started to blow.<br>
-  The tree house started to <span class="word">spin<span class="tooltip">빙글빙글 돌다</span></span>.<br>
-  It spun faster and faster.<br>
-  Then everything was <span class="word">still<span class="tooltip">조용해졌다</span></span>.<br>
-  Absolutely still.
-</p>
+    document.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('vocab')) {
+        tooltip.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
