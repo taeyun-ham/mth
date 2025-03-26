@@ -1,107 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chapter Two: The Monster</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter Two - Word Tooltips</title>
   <style>
-    body { font-family: sans-serif; line-height: 1.8; padding: 20px; }
-    .word { color: blue; cursor: pointer; text-decoration: underline; }
-    #meaning { margin-top: 30px; padding: 10px; background-color: #f0f0f0; }
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .word {
+      position: relative;
+      cursor: pointer;
+      color: darkblue;
+    }
+    .tooltip {
+      visibility: hidden;
+      background-color: #eee;
+      color: #000;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.9em;
+      width: max-content;
+      max-width: 200px;
+    }
+    .word:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
-  <h1>Chapter Two: The Monster</h1>
-  <p>
-    Jack <span class="word" data-word="crawl">crawled</span> into the tree house.<br>
-    “Wow,” he said. The tree house was filled with <span class="word" data-word="book">books</span>.<br>
-    Books were everywhere - very old books with <span class="word" data-word="dusty">dusty</span> covers and new books with <span class="word" data-word="shiny">shiny</span>, <span class="word" data-word="bright">bright</span> covers.<br>
-    “Look,” said Annie. “You can see far away.”<br>
-    She was <span class="word" data-word="peer">peering</span> out the tree house window.<br>
-    Jack looked out the window with her.<br>
-    Below were the tops of the other <span class="word" data-word="tree">trees</span>.<br>
-    In the distance he could see the Frog Creek <span class="word" data-word="library">library</span>, the <span class="word" data-word="school">school</span> and the <span class="word" data-word="park">park</span>.<br>
-    Annie pointed in the other direction. “There’s our <span class="word" data-word="house">house</span>,” she said.<br>
-    Jack could see their white wooden house with its green <span class="word" data-word="porch">porch</span>.<br>
-    In the yard was their neighbor’s black <span class="word" data-word="dog">dog</span>.<br>
-    “Hi, Henry!” shouted Annie.<br>
-    “<span class="word" data-word="shush">Shush</span>! We’re not supposed to be up here,” said Jack.<br>
-    Jack <span class="word" data-word="glance">glanced</span> around the tree house again.<br>
-    He noticed <span class="word" data-word="bookmark">bookmarks</span> were sticking out of many of the books.<br>
-    “I <span class="word" data-word="wonder">wonder</span> who owns all these books,” he said.<br>
-    “I like this one,” said Annie. She picked up a book with a <span class="word" data-word="castle">castle</span> on the cover.<br>
-    “Here’s a book about Pennsylvania,” said Jack. He turned to the page with the bookmark.<br>
-    “Hey, here’s a <span class="word" data-word="picture">picture</span> of Frog Creek,” said Jack. “It’s a picture of these woods!”<br>
-    “Here’s a book for you,” said Annie. She held up a book about <span class="word" data-word="dinosaur">dinosaurs</span>.<br>
-    A blue silk bookmark was sticking out of it.<br>
-    “Let me see,” said Jack. He set his <span class="word" data-word="backpack">backpack</span> down on the floor and grabbed the book from Annie.<br>
-    Jack opened the dinosaur book to the place where the bookmark was.<br>
-    Jack turned to a picture of an ancient flying <span class="word" data-word="reptile">reptile</span>.<br>
-    He recognized it as a <span class="word" data-word="pteranodon">Pteranodon</span>. He touched the huge <span class="word" data-word="wing">bat-like wings</span>.<br>
-    “Wow,” <span class="word" data-word="whisper">whispered</span> Jack. “I wish we could go to the time of Pteranodons.”<br>
-    Jack studied the picture of the <span class="word" data-word="odd">odd</span>-looking creature <span class="word" data-word="soar">soaring</span> through the sky.<br>
-    “Ahhh!” screamed Annie.<br>
-    “What?” said Jack.<br>
-    “A <span class="word" data-word="monster">monster</span>!” Annie cried.<br>
-    Jack looked out the window. A <span class="word" data-word="giant">giant</span> creature was <span class="word" data-word="glide">gliding</span> above the <span class="word" data-word="treetop">treetops</span>!<br>
-    It had a long, <span class="word" data-word="weird">weird</span> crest, a skinny <span class="word" data-word="beak">beak</span>, and huge wings!<br>
-    It was a real live Pteranodon!<br>
-    “<span class="word" data-word="get down">Get down</span>!” cried Annie.<br>
-    Jack and Annie <span class="word" data-word="crouch">crouched</span> on the floor.<br>
-    The wind started to <span class="word" data-word="blow">blow</span>.<br>
-    The tree house started to <span class="word" data-word="spin">spin</span>. It spun faster and faster.<br>
-    Then everything was <span class="word" data-word="still">still</span>. <span class="word" data-word="absolutely">Absolutely</span> still.
-  </p>
-  <div id="meaning">Click a word to see the meaning.</div>
-  <script>
-    const meanings = {
-      crawl: "기어가다",
-      book: "책",
-      dusty: "먼지가 낀",
-      shiny: "빛나는",
-      bright: "밝은",
-      peer: "자세히 들여다보다",
-      tree: "나무",
-      library: "도서관",
-      school: "학교",
-      park: "공원",
-      house: "집",
-      porch: "현관",
-      dog: "개",
-      shush: "쉿, 조용히 하라는 말",
-      glance: "힐끗 보다",
-      bookmark: "책갈피",
-      wonder: "궁금해하다",
-      castle: "성",
-      picture: "그림, 사진",
-      dinosaur: "공룡",
-      backpack: "배낭",
-      reptile: "파충류",
-      pteranodon: "프테라노돈 (날아다니는 공룡)",
-      wing: "날개",
-      whisper: "속삭이다",
-      odd: "이상한",
-      soar: "높이 날다",
-      monster: "괴물",
-      giant: "거대한",
-      glide: "미끄러지듯 날다",
-      treetop: "나무 꼭대기",
-      weird: "기이한",
-      beak: "부리",
-      getDown: "엎드려!",
-      crouch: "쭈그리다",
-      blow: "바람이 불다",
-      spin: "빙글 돌다",
-      still: "정지한",
-      absolutely: "완전히"
-    };
+<h2>Chapter Two: The Monster</h2>
+<p>
+  Jack <span class="word">crawled<span class="tooltip">기어갔다</span></span> into the tree house.<br>
+  "Wow," he said. The tree house was filled with <span class="word">books<span class="tooltip">책들</span></span>.<br>
+  Books were <span class="word">everywhere<span class="tooltip">온 사방에</span></span> - very old books with <span class="word">dusty<span class="tooltip">먼지 낀</span></span> covers and new books with <span class="word">shiny<span class="tooltip">반짝이는</span></span>, <span class="word">bright<span class="tooltip">밝은</span></span> covers.<br><br>
 
-    document.querySelectorAll('.word').forEach(word => {
-      word.addEventListener('click', () => {
-        const w = word.dataset.word;
-        document.getElementById('meaning').textContent = `${w} : ${meanings[w] || '의미 없음'}`;
-      });
-    });
-  </script>
+  "Look," said Annie. "You can see far away."<br>
+  She was <span class="word">peering<span class="tooltip">유심히 들여다봤다</span></span> out the tree house <span class="word">window<span class="tooltip">창문</span></span>.<br>
+  Jack looked out the window with her.<br>
+  Below were the tops of the other <span class="word">trees<span class="tooltip">나무들</span></span>.<br>
+  In the <span class="word">distance<span class="tooltip">멀리</span></span> he could see the Frog Creek <span class="word">library<span class="tooltip">도서관</span></span>, the elementary <span class="word">school<span class="tooltip">학교</span></span>, and the <span class="word">park<span class="tooltip">공원</span></span>.<br><br>
+
+  Annie pointed in the other <span class="word">direction<span class="tooltip">방향</span></span>.<br>
+  "There's our <span class="word">house<span class="tooltip">집</span></span>," she said.<br>
+  Jack could see their white wooden house with its green <span class="word">porch<span class="tooltip">현관</span></span>.<br>
+  In the <span class="word">yard<span class="tooltip">마당</span></span> next was their neighbor's black <span class="word">dog<span class="tooltip">개</span></span>, Henry. He looked very <span class="word">tiny<span class="tooltip">작은</span></span>.<br><br>
+
+  "Hi, Henry!" shouted Annie.<br>
+  "Shush! We're not supposed to be up here," said Jack.<br>
+  Jack <span class="word">glanced<span class="tooltip">훑어보다</span></span> around the tree house again.<br>
+  He noticed that <span class="word">bookmarks<span class="tooltip">책갈피들</span></span> were sticking out of many of the books.<br>
+  "I wonder who <span class="word">owns<span class="tooltip">가지고 있는</span></span> all these books," he said.<br><br>
+
+  "I like this one," said Annie. She picked up a book with a <span class="word">castle<span class="tooltip">성</span></span> on the cover.<br>
+  "Here's a book about <span class="word">Pennsylvania<span class="tooltip">펜실베니아 (미국 주)</span></span>," said Jack.<br>
+  He turned to the page with the bookmark.<br>
+  "Hey, here's a picture of Frog Creek," said Jack. "It's a picture of these woods!"<br><br>
+
+  "Oh, here's a book for you," said Annie.<br>
+  She held up a book about <span class="word">dinosaurs<span class="tooltip">공룡들</span></span>.<br>
+  A blue silk bookmark was sticking out of it.<br>
+  "Let me see," said Jack.<br>
+  He set his <span class="word">backpack<span class="tooltip">가방</span></span> down on the floor and <span class="word">grabbed<span class="tooltip">잡았다</span></span> the book from Annie.<br><br>
+
+  Jack opened the dinosaur book to the place where the bookmark was.<br>
+  He turned to a picture of an ancient flying <span class="word">reptile<span class="tooltip">파충류</span></span>.<br>
+  He recognized it as a <span class="word">Pteranodon<span class="tooltip">프테라노돈 (익룡)</span></span>.<br>
+  He touched the huge <span class="word">bat-like<span class="tooltip">박쥐처럼 생긴</span></span> <span class="word">wings<span class="tooltip">날개</span></span> in the picture.<br>
+  "Wow," whispered Jack. "I wish we could go to the time of Pteranodons."<br><br>
+
+  Jack studied the picture of the <span class="word">odd-looking<span class="tooltip">이상하게 생긴</span></span> creature <span class="word">soaring<span class="tooltip">날아오르는</span></span> through the <span class="word">sky<span class="tooltip">하늘</span></span>.<br>
+  "Ahhh!" screamed Annie.<br>
+  "What!" said Jack.<br>
+  "A <span class="word">monster<span class="tooltip">괴물</span></span>!" Annie cried. She pointed out the window.<br>
+  Jack looked out the window.<br>
+  A <span class="word">giant<span class="tooltip">거대한</span></span> creature was <span class="word">gliding<span class="tooltip">미끄러지듯 날다</span></span> above the <span class="word">treetops<span class="tooltip">나무 꼭대기</span></span>!<br>
+  It had a long, <span class="word">weird<span class="tooltip">이상한</span></span> <span class="word">crest<span class="tooltip">볏</span></span> on the back of its head, a skinny <span class="word">beak<span class="tooltip">부리</span></span>, and huge bat-like wings!<br>
+  It was a real live Pteranodon!<br>
+  The creature <span class="word">swooped<span class="tooltip">휙 날아왔다</span></span> through the sky.<br>
+  It looked like a <span class="word">glider<span class="tooltip">활공기</span></span> <span class="word">plane<span class="tooltip">비행기</span></span>!<br>
+  It was coming straight toward the tree house!<br>
+  "Get down!" cried Annie.<br>
+  Jack and Annie <span class="word">crouched<span class="tooltip">쭈그려 앉았다</span></span> on the floor.<br>
+  The <span class="word">wind<span class="tooltip">바람</span></span> started to blow.<br>
+  The tree house started to <span class="word">spin<span class="tooltip">빙글빙글 돌다</span></span>.<br>
+  It spun faster and faster.<br>
+  Then everything was <span class="word">still<span class="tooltip">조용해졌다</span></span>.<br>
+  Absolutely still.
+</p>
 </body>
 </html>
