@@ -1,111 +1,101 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>단어 뜻 보기</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 8px;
-        }
-
-        .clickable {
-            color: #007BFF;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        .definition-box {
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            padding: 10px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            display: none;
-            max-width: 300px;
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter One: Into the Woods</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      padding: 20px;
+      background: #fefefe;
+    }
+    .vocab {
+      color: #0077cc;
+      font-weight: bold;
+      cursor: pointer;
+      border-bottom: 1px dashed #0077cc;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 250px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <p>
-            “Help! A monster!” said Annie.<br>
-            “Yeah, sure,” said Jack. “A real road in Frog Creek, Pennsylvania.”<br>
-            “Run, Jack!” said Annie. She <span class="clickable" data-meaning="경주하다">raced</span> up the road.<br>
-            Jack <span class="clickable" data-meaning="기다리다">waited</span> for her.<br>
-            “Come on, Jack, I’ll race you!” said Annie.<br>
-            Jack <span class="clickable" data-meaning="부르다">called</span> out to her.<br>
-            “No, thanks,” said Jack.<br>
-            Annie raced along into the woods.<br>
-            Jack looked at the sky. The sun was about to set.<br>
-            “Come on, Annie! It’s time to go home!” yelled Jack.<br>
-            But Annie didn’t answer.<br>
-            Jack waited.<br>
-            “Annie!” he <span class="clickable" data-meaning="부르다">called</span> again.<br>
-            “Jack! Jack!” Annie <span class="clickable" data-meaning="소리쳤다">shouted</span>. “Come here! <span class="clickable" data-meaning="빠른">Quick</span>!”<br>
-            Jack <span class="clickable" data-meaning="투덜거리다">groaned</span>. “This better be good,” he said.<br>
-            Jack left the road and headed into the woods. The trees were lit with a <span class="clickable" data-meaning="황금색의">golden</span> <span class="clickable" data-meaning="늦은 오후">late-afternoon</span> <span class="clickable" data-meaning="빛">light</span>.<br>
-            “Over here!” called Annie.<br>
-            Annie was standing under a tall oak tree.<br>
-            “Look!” she said. She pointed at a rope ladder.<br>
-            It was hanging down from high in the tree.<br>
-            “Wow,” Jack <span class="clickable" data-meaning="속삭이다">whispered</span>.<br>
-            At the top of the tree was a tree house, <span class="clickable" data-meaning="밀어넣다, 숨기다">tucked</span> between two <span class="clickable" data-meaning="가지들">branches</span>.<br>
-            “That must be the <span class="clickable" data-meaning="가장 높은">tallest</span> tree house in the world,” said Annie.<br>
-            “Who built it?” asked Jack. “I’ve never seen it before.”<br>
-            “I don’t know. But I’m going up,” said Annie.<br>
-            “No! We don’t know who it belongs to,” said Jack.<br>
-            “Just for a teeny minute,” said Annie. She started up the ladder.<br>
-            “Annie, come back!” said Jack.<br>
-            But Annie kept <span class="clickable" data-meaning="오르다">climbing</span>. She <span class="clickable" data-meaning="올라갔다">climbed</span> all the way up to the tallest <span class="clickable" data-meaning="가지들">branches</span>.<br>
-            Jack sighed. “Annie, it’s almost dark! We have to go home!”<br>
-            Annie <span class="clickable" data-meaning="사라지다">disappeared</span> inside the tree house.<br>
-            “Annie!” Jack called.<br>
-            Jack waited a moment. He was about to call again when Annie poked her <span class="clickable" data-meaning="머리">head</span> out of the tree house window.<br>
-            “Books!” Annie <span class="clickable" data-meaning="소리쳤다">shouted</span>.<br>
-            “What!” Jack said.<br>
-            “It’s filled with books!” said Annie.<br>
-            Oh, man! Jack <span class="clickable" data-meaning="생각하다">thought</span>. He loved books.<br>
-            Jack pushed his glasses into place. He <span class="clickable" data-meaning="꽉 잡다">gripped</span> the sides of the rope ladder and started up.<br>
-        </p>
-    </div>
+  <h2>Chapter One: Into the Woods</h2>
+  <p>
+    “<span class="vocab" data-meaning="도와줘! 🆘">Help</span>! A <span class="vocab" data-meaning="괴물 👹">monster</span>!” said Annie.<br>
+    “Yeah, sure,” said Jack. “A real <span class="vocab" data-meaning="괴물 👹">monster</span> in Frog Creek, Pennsylvania.”<br>
+    “<span class="vocab" data-meaning="달려! 🏃‍♂️">Run</span>, Jack!” said Annie.<br>
+    She <span class="vocab" data-meaning="달렸다 🏃‍♀️">ran</span> up the road.<br>
+    Oh, <span class="vocab" data-meaning="형/동생 😓">brother</span>, thought Jack. This is what he got for spending time with his seven-year-old sister.<br>
+    Annie loved <span class="vocab" data-meaning="상상 놀이 🎭">pretend stuff</span>. But Jack was eight and a half. He liked <span class="vocab" data-meaning="진짜 것들 🎯">real things</span>.<br>
+    “Watch out, Jack! The <span class="vocab" data-meaning="괴물 👹">monster</span>’s coming!” said Annie.<br>
+    Jack didn’t say anything.<br>
+    “Come on, Jack, I’ll <span class="vocab" data-meaning="경주하다 🏃‍♀️">race</span> you!” said Annie.<br>
+    “No, thanks,” said Jack.<br>
+    Annie <span class="vocab" data-meaning="달렸다 🏃‍♀️">raced</span> along into the <span class="vocab" data-meaning="숲 🌲">woods</span>.<br>
+    Jack looked at the <span class="vocab" data-meaning="하늘 🌤️">sky</span>. The <span class="vocab" data-meaning="해 🌇">sun</span> was about to <span class="vocab" data-meaning="지다 🌄">set</span>.<br>
+    “Come on, Annie! It’s time to go <span class="vocab" data-meaning="집 🏠">home</span>!” yelled Jack.<br>
+    But Annie didn’t answer.<br>
+    Jack waited.<br>
+    “Annie!” he called again.<br>
+    “Jack! Jack!” Annie shouted. “Come here! Quick!”<br>
+    Jack <span class="vocab" data-meaning="신음하다 😩">groaned</span>. “This better be good,” he said.<br>
+    Jack left the <span class="vocab" data-meaning="도로 🛣️">road</span> and headed into the <span class="vocab" data-meaning="숲 🌲">woods</span>. The trees were lit with a <span class="vocab" data-meaning="황금빛 🌅">golden</span> late-afternoon light.<br>
+    “Over here!” called Annie.<br>
+    Annie was standing under a tall <span class="vocab" data-meaning="참나무 🌳">oak tree</span>.<br>
+    “Look!” she said. She pointed at a rope <span class="vocab" data-meaning="사다리 🪜">ladder</span>.<br>
+    It was hanging down from high in the <span class="vocab" data-meaning="나무 🌳">tree</span>.<br>
+    “Wow,” Jack whispered.<br>
+    At the top of the tree was a <span class="vocab" data-meaning="나무집 🛖">tree house</span>, <span class="vocab" data-meaning="끼워져 있는 📦">tucked</span> between two branches.<br>
+    “That must be the highest <span class="vocab" data-meaning="나무집 🛖">tree house</span> in the world,” said Annie.<br>
+    “Who built it?” asked Jack. “I’ve never seen it before.”<br>
+    “I don’t know. But I’m going up,” said Annie.<br>
+    “No! We don’t know who it belongs to,” said Jack.<br>
+    “Just for a <span class="vocab" data-meaning="조금만 ✋">teeny</span> minute,” said Annie. She started up the <span class="vocab" data-meaning="사다리 🪜">ladder</span>.<br>
+    “Annie, come back!” said Jack.<br>
+    But Annie kept <span class="vocab" data-meaning="오르다 🧗‍♀️">climbing</span>. She climbed all the way up to the tallest branches.<br>
+    Jack <span class="vocab" data-meaning="한숨 쉬다 😮‍💨">sighed</span>. “Annie, it’s almost <span class="vocab" data-meaning="어두워지는 시간 🌆">dark</span>! We have to go home!”<br>
+    Annie <span class="vocab" data-meaning="사라지다 🫥">disappeared</span> inside the <span class="vocab" data-meaning="나무집 🛖">tree house</span>.<br>
+    “Annie!” Jack called.<br>
+    Jack waited a moment. He was about to call again when Annie <span class="vocab" data-meaning="고개를 내밀다 🙋‍♀️">poked</span> her head out of the <span class="vocab" data-meaning="창문 🪟">window</span>.<br>
+    “<span class="vocab" data-meaning="책들 📚">Books</span>!” Annie shouted.<br>
+    “What!” Jack said.<br>
+    “It’s filled with <span class="vocab" data-meaning="책들 📚">books</span>!” said Annie.<br>
+    Oh, man! Jack thought. He loved <span class="vocab" data-meaning="책들 📚">books</span>.<br>
+    Jack pushed his <span class="vocab" data-meaning="안경 👓">glasses</span> into place. He <span class="vocab" data-meaning="잡다 ✋">gripped</span> the sides of the rope ladder and started up.
+  </p>
 
-    <div id="definitionBox" class="definition-box">
-        <p>단어를 클릭하면 그 뜻을 볼 수 있어요!</p>
-    </div>
+  <div class="tooltip" id="tooltip"></div>
 
-    <script>
-        // 단어 클릭 시 뜻을 보여주는 기능
-        document.querySelectorAll('.clickable').forEach(function(word) {
-            word.addEventListener('click', function() {
-                const meaning = word.getAttribute('data-meaning');
-                const definitionBox = document.getElementById('definitionBox');
-                definitionBox.innerHTML = `<p><strong>뜻:</strong> ${meaning}</p>`;
-                definitionBox.style.display = 'block';
-            });
-        });
+  <script>
+    const vocabItems = document.querySelectorAll('.vocab');
+    const tooltip = document.getElementById('tooltip');
 
-        // 페이지에서 다른 곳을 클릭하면 뜻 상자가 사라짐
-        document.body.addEventListener('click', function(e) {
-            if (!e.target.classList.contains('clickable')) {
-                document.getElementById('definitionBox').style.display = 'none';
-            }
-        });
-    </script>
+    vocabItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        tooltip.textContent = e.target.getAttribute('data-meaning');
+        tooltip.style.display = 'block';
+        tooltip.style.left = e.pageX + 'px';
+        tooltip.style.top = (e.pageY + 20) + 'px';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('vocab')) {
+        tooltip.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
