@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinosaur Valley - Interactive Kids Reader</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.7;
+      padding: 20px;
+      background-color: #fefefe;
+    }
+    .vocab {
+      color: #0077cc;
+      font-weight: bold;
+      cursor: pointer;
+      border-bottom: 1px dashed #0077cc;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 250px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+  <h2>Chapter 6: Dinosaur Valley</h2>
+  <p>
+    "<span class="vocab" data-meaning="보다 👀">Look</span> at this!" Jack called. "Look what I <span class="vocab" data-meaning="찾다 🔍">found</span>!"<br>
+    She was busy picking a <span class="vocab" data-meaning="꽃 🌸">flower</span> from the <span class="vocab" data-meaning="나무 🌳">tree</span>.<br>
+    Clutching her magnolia flower, she took off down the <span class="vocab" data-meaning="언덕 ⛰️">hill</span>.<br>
+    Jack grabbed his <span class="vocab" data-meaning="가방 🎒">backpack</span> and raced up the hill.<br>
+    The <span class="vocab" data-meaning="계곡 🏞️">valley</span> below was filled with <span class="vocab" data-meaning="둥지 🪺">nests</span>.<br>
+    The nests were filled with tiny <span class="vocab" data-meaning="공룡 🦕">dinosaurs</span>!<br>
+    A gigantic <span class="vocab" data-meaning="오리부리 공룡 🦕">duck-billed</span> dinosaur!<br>
+    Jack <span class="vocab" data-meaning="멈추다 ✋">stopped</span>. He didn’t want to get too <span class="vocab" data-meaning="가까운 📍">close</span>.<br>
+    "Don’t <span class="vocab" data-meaning="움직이다 🚶">move</span>," he said. "<span class="vocab" data-meaning="기어가다 🐛">Crawl</span> toward me."<br>
+    Annie <span class="vocab" data-meaning="기어가다 🐛">crawled</span> toward Jack.<br>
+    The dinosaur followed her, still <span class="vocab" data-meaning="소리 지르다 📣">bellowing</span>.<br>
+    Jack and Annie both <span class="vocab" data-meaning="숙이다 🙇">bowed</span> their heads and <span class="vocab" data-meaning="씹다 😬">chewed</span>.<br>
+    The dinosaur grew <span class="vocab" data-meaning="조용한 🤫">quiet</span>.<br>
+    Annie <span class="vocab" data-meaning="일어나다 🧍">stood</span> up and offered a flower.<br>
+    The dinosaur <span class="vocab" data-meaning="걷다 🚶‍♀️">moved</span> closer and took the flower.<br>
+    Annie hurried up the hill. The dinosaur <span class="vocab" data-meaning="뒤뚱뒤뚱 걷다 🦆">waddled</span> after her.<br>
+    Jack quickly <span class="vocab" data-meaning="보다 👀">examined</span> the <span class="vocab" data-meaning="새끼 🐣">babies</span>.<br>
+    He opened the book and <span class="vocab" data-meaning="읽다 📖">read</span> the page.<br>
+    The <span class="vocab" data-meaning="괴물 👹">monster</span> had two legs, a long tail, and big <span class="vocab" data-meaning="이빨 🦷">teeth</span>.<br>
+    "<span class="vocab" data-meaning="티라노사우르스 🦖">Tyrannosaurus</span> rex!" Jack <span class="vocab" data-meaning="속삭이다 🤫">whispered</span>.
+  </p>
+
+  <div class="tooltip" id="tooltip"></div>
+
+  <script>
+    const vocabElements = document.querySelectorAll('.vocab');
+    const tooltip = document.getElementById('tooltip');
+
+    vocabElements.forEach(word => {
+      word.addEventListener('click', (e) => {
+        const meaning = e.target.getAttribute('data-meaning');
+        tooltip.textContent = meaning;
+        tooltip.style.display = 'block';
+        tooltip.style.left = e.pageX + 'px';
+        tooltip.style.top = (e.pageY + 20) + 'px';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('vocab')) {
+        tooltip.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
